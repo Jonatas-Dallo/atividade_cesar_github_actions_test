@@ -1,0 +1,179 @@
+:root {
+  --cor_fundo: #0b1220;
+  --cor_card: #111a2e;
+  --cor_borda: #223055;
+  --cor_texto: #e6eaf2;
+  --cor_texto_suave: #aab3c5;
+  --cor_primaria: #3b82f6;
+  --cor_primaria_hover: #2563eb;
+  --cor_secundaria: #223055;
+  --cor_secundaria_hover: #2b3a66;
+  --raio: 14px;
+  --espacamento: 16px;
+  --sombra: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --fonte: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte);
+  color: var(--cor_texto);
+
+  /* Fundo 100% viewport, sem sensação de “bloco” */
+  background: radial-gradient(1200px 700px at 20% 10%, rgba(59, 130, 246, 0.22), transparent 60%),
+              radial-gradient(1100px 700px at 80% 30%, rgba(37, 99, 235, 0.20), transparent 60%),
+              linear-gradient(180deg, #070c17 0%, #0b1220 60%, #070c17 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Centraliza horizontal e verticalmente */
+.tela {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px 18px;
+}
+
+/* “Card” principal da calculadora */
+.calculadora {
+  width: min(780px, 100%);
+}
+
+.cabecalho {
+  margin-bottom: 18px;
+}
+
+.titulo {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.2px;
+}
+
+.subtitulo {
+  margin: 6px 0 0;
+  color: var(--cor_texto_suave);
+}
+
+.card {
+  background: rgba(17, 26, 46, 0.9);
+  border: 1px solid var(--cor_borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 18px;
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.campo {
+  display: grid;
+  gap: 8px;
+}
+
+.rotulo {
+  font-size: 13px;
+  color: var(--cor_texto_suave);
+}
+
+.entrada {
+  height: 44px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--cor_borda);
+  background: #0e1730;
+  color: var(--cor_texto);
+  outline: none;
+}
+
+.entrada:focus {
+  border-color: rgba(59, 130, 246, 0.8);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+}
+
+.resultado {
+  grid-column: 1 / -1;
+  margin-top: 6px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(170, 179, 197, 0.25);
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.resultado_rotulo {
+  color: var(--cor_texto_suave);
+  font-size: 13px;
+}
+
+.resultado_valor {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* Botões “uma div abaixo” do formulário */
+.acoes {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.grupo_botoes_operacoes,
+.grupo_botoes_utilitarios {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.botao {
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--cor_borda);
+  cursor: pointer;
+  color: var(--cor_texto);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.botao_primario {
+  background: var(--cor_primaria);
+  border-color: rgba(59, 130, 246, 0.7);
+}
+
+.botao_primario:hover {
+  background: var(--cor_primaria_hover);
+}
+
+.botao_secundario {
+  background: var(--cor_secundaria);
+}
+
+.botao_secundario:hover {
+  background: var(--cor_secundaria_hover);
+}
+
+.rodape {
+  margin-top: 18px;
+  color: var(--cor_texto_suave);
+}
+
+@media (max-width: 560px) {
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+}

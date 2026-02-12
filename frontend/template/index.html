@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculadora (Somente Soma)</title>
+  <link rel="stylesheet" href="../static/css/index.css" />
+</head>
+
+<body>
+  <main class="tela">
+    <section class="calculadora">
+      <header class="cabecalho">
+        <h1 class="titulo">Calculadora</h1>
+        <p class="subtitulo">Incremento 1: somente soma</p>
+      </header>
+
+      <!-- Em cima: formulário -->
+      <section class="card">
+        <form id="formulario_calculadora" class="formulario" autocomplete="off">
+          <div class="campo">
+            <label for="entrada_numero_1" class="rotulo">Número 1</label>
+            <input id="entrada_numero_1" name="numero_1" class="entrada" type="number" inputmode="decimal" step="any"
+              placeholder="Ex.: 10" required />
+          </div>
+
+          <div class="campo">
+            <label for="entrada_numero_2" class="rotulo">Número 2</label>
+            <input id="entrada_numero_2" name="numero_2" class="entrada" type="number" inputmode="decimal" step="any"
+              placeholder="Ex.: 5" required />
+          </div>
+
+          <div class="resultado">
+            <span class="resultado_rotulo">Resultado:</span>
+            <output id="saida_resultado" class="resultado_valor" aria-live="polite">—</output>
+          </div>
+        </form>
+      </section>
+
+      
+
+      <!-- Em baixo: área de botões (para crescer futuramente) -->
+      <section class="acoes">
+        <div class="grupo_botoes_operacoes">
+
+          <!-- --------------------------------------------------- -->
+          <button id="botao_somar" class="botao botao_primario" type="button">
+            Somar
+          </button>
+
+          <!-- Futuramente: Subtrair, Multiplicar, Dividir, Media, Resto de Divisão e Potência -->
+
+          <!-- Botão multiplicar inspirado no botão somar -->
+
+
+          
+          <!-- --------------------------------------------------- -->
+        </div>
+
+
+      
+
+        <div class="grupo_botoes_utilitarios">
+          <button id="botao_limpar" class="botao botao_secundario" type="button">
+            Limpar
+          </button>
+        </div>
+      </section>
+
+      <footer class="rodape">
+        <small>Dica: você vai adicionar novas operações nos próximos commits.</small>
+      </footer>
+    </section>
+  </main>
+
+  <script src="../static/js/index.js"></script>
+<script src="../static/js/operacoes.js"></script>
+
+</body>
+
+</html>
