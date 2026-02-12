@@ -5,4 +5,4 @@ def somar(numero1, numero2):
     print("Operação realizada com sucesso.")
     print("==========================================")
 
-    return numero1 + nu
+    return numero1 + numero2
