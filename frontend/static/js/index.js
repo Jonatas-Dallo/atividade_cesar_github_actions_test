@@ -43,11 +43,22 @@ function limparFormulario() {
 
 function inicializarPagina() {
   // Cada botão de operação: salva valores e avisa qual operação foi pedida
+  // Somar ++++++
   const elementoBotaoSomar = document.getElementById("botao_somar");
   elementoBotaoSomar.addEventListener("click", function () {
     salvarValoresNoLocalStorage();
     dispararOperacaoSolicitada("soma");
   });
+
+  // Subtrair -------
+   const elementoBotaoSubtrair = document.getElementById("botao_subtrair");
+  elementoBotaoSubtrair.addEventListener("click", function () {
+    salvarValoresNoLocalStorage();
+    dispararOperacaoSolicitada("subtrai");
+  });
+
+
+
 
   ///////////////////////////////////////////////////////////////
   
