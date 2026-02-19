@@ -70,7 +70,7 @@ def rota_dividi():
     return jsonify({'resultado': resultado})
 
 # Rota para Resto da Divisão
-@calculador.route('/resto_divisao', methods=['POST'])
+@calculador.route('/resto_dividir', methods=['POST'])
 def rota_resto_divisao():    
     corpo_json = request.get_json(silent=True)
     
