@@ -4,6 +4,7 @@ from functions.soma import somar
 from functions.subtrai import subtrair
 from functions.multiplica import multiplicar
 from functions.dividi import dividir
+from functions.resto_divisao import resto_da_divisao
 
 calculador = Flask(__name__)
 
@@ -63,6 +64,16 @@ def rota_dividi():
     
     numero1, numero2 = obter_numeros(corpo_json)
     resultado = dividir(numero1, numero2)
+    
+    return jsonify({'resultado': resultado})
+
+# Rota para Resto da Divisão
+@calculador.route('/resto_divisao', methods=['POST'])
+def rota_resto_divisao():    
+    corpo_json = request.get_json(silent=True)
+    
+    numero1, numero2 = obter_numeros(corpo_json)
+    resultado = resto_da_divisao(numero1, numero2)
     
     return jsonify({'resultado': resultado})
 

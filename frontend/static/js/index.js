@@ -72,6 +72,13 @@ function inicializarPagina() {
     dispararOperacaoSolicitada("dividi");
   });
 
+  // Resto da Divisão
+  const elementoBotaoRestoDivisao = document.getElementById("botao_resto_divisao");
+  elementoBotaoRestoDivisao.addEventListener("click", function () {
+    salvarValoresNoLocalStorage();
+    dispararOperacaoSolicitada("resto_divisao");
+  });
+
   ///////////////////////////////////////////////////////////////
 
   // Código para o botão de multiplicar (se inspirar no de somar, só mudar para multiplicar)
@@ -79,14 +86,6 @@ function inicializarPagina() {
   ///////////////////////////////////////////////////////////////
   const elementoBotaoLimpar = document.getElementById("botao_limpar");
   elementoBotaoLimpar.addEventListener("click", limparFormulario);
-
-  // Enter não recarrega; só salva e dispara soma (por enquanto)
-  const elementoFormulario = document.getElementById("formulario_calculadora");
-  elementoFormulario.addEventListener("submit", function (evento) {
-    evento.preventDefault();
-    salvarValoresNoLocalStorage();
-    dispararOperacaoSolicitada("soma");
-  });
 }
 
 document.addEventListener("DOMContentLoaded", inicializarPagina);
