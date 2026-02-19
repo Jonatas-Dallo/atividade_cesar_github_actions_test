@@ -5,6 +5,8 @@ from functions.subtrai import subtrair
 from functions.multiplica import multiplicar
 from functions.dividi import dividir
 from functions.resto_divisao import resto_da_divisao
+from functions.media import media
+
 
 calculador = Flask(__name__)
 
@@ -76,6 +78,17 @@ def rota_resto_divisao():
     resultado = resto_da_divisao(numero1, numero2)
     
     return jsonify({'resultado': resultado})
+
+# Rota para Média
+@calculador.route('/media', methods=['POST'])
+def rota_media():    
+    corpo_json = request.get_json(silent=True)
+    
+    numero1, numero2 = obter_numeros(corpo_json)
+    resultado = media(numero1, numero2)
+    
+    return jsonify({'resultado': resultado})
+
 
 #################### Ignorar daqui para baixo #####################
 

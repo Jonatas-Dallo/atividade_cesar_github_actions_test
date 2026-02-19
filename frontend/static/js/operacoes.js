@@ -45,5 +45,11 @@ window.addEventListener("operacao_solicitada", (evento) => {
     chamarOperacao("/resto_divisao")
   }
 
+    // Média
+  if (evento.detail.operacao === "media") {
+    chamarOperacao("/media")
+  }
+
+
   // if para multiplicar (se inspirar no de soma, só mudar para multiplicar)
 });

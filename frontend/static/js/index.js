@@ -79,6 +79,14 @@ function inicializarPagina() {
     dispararOperacaoSolicitada("resto_divisao");
   });
 
+  // Média
+const elementoBotaoMedia = document.getElementById("botao_media");
+elementoBotaoMedia.addEventListener("click", function () {
+  salvarValoresNoLocalStorage();
+  dispararOperacaoSolicitada("media");
+});
+
+
   ///////////////////////////////////////////////////////////////
 
   // Código para o botão de multiplicar (se inspirar no de somar, só mudar para multiplicar)
