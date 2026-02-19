@@ -24,6 +24,7 @@ def obter_numeros(corpo_json: dict | None):
     
     return numero1, numero2
 
+# Rota para Soma
 @calculador.route('/soma', methods=['POST'])
 def rota_soma():
     corpo_json = request.get_json(silent=True)
@@ -42,11 +43,6 @@ def rota_subtrai():
     resultado = subtrair(numero1, numero2)
     
     return jsonify({'resultado': resultado})
-
-
-
-
-# Rota para multiplicação
 
 #################### Ignorar daqui para baixo #####################
 
