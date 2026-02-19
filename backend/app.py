@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 
 from functions.soma import somar
 from functions.subtrai import subtrair
+from functions.multiplica import multiplicar
 
 calculador = Flask(__name__)
 
@@ -34,13 +35,23 @@ def rota_soma():
     
     return jsonify({'resultado': resultado})
 
-# Rota para Subtração ------
+# Rota para Subtração
 @calculador.route('/subtrai', methods=['POST'])
 def rota_subtrai():
     corpo_json = request.get_json(silent=True)
     
     numero1, numero2 = obter_numeros(corpo_json)
     resultado = subtrair(numero1, numero2)
+    
+    return jsonify({'resultado': resultado})
+
+# Rota para Multiplicação
+@calculador.route('/multiplica', methods=['POST'])
+def rota_multiplica():    
+    corpo_json = request.get_json(silent=True)
+    
+    numero1, numero2 = obter_numeros(corpo_json)
+    resultado = multiplicar(numero1, numero2)
     
     return jsonify({'resultado': resultado})
 

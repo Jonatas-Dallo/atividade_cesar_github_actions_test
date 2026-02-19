@@ -43,25 +43,30 @@ function limparFormulario() {
 
 function inicializarPagina() {
   // Cada botão de operação: salva valores e avisa qual operação foi pedida
-  // Somar ++++++
+  
+  // Somar
   const elementoBotaoSomar = document.getElementById("botao_somar");
   elementoBotaoSomar.addEventListener("click", function () {
     salvarValoresNoLocalStorage();
     dispararOperacaoSolicitada("soma");
   });
 
-  // Subtrair -------
-   const elementoBotaoSubtrair = document.getElementById("botao_subtrair");
+  // Subtrair
+  const elementoBotaoSubtrair = document.getElementById("botao_subtrair");
   elementoBotaoSubtrair.addEventListener("click", function () {
     salvarValoresNoLocalStorage();
     dispararOperacaoSolicitada("subtrai");
   });
 
-
-
+  // Multiplicar
+  const elementoBotaoMultiplicar = document.getElementById("botao_multiplicar");
+  elementoBotaoMultiplicar.addEventListener("click", function () {
+    salvarValoresNoLocalStorage();
+    dispararOperacaoSolicitada("multiplica");
+  });
 
   ///////////////////////////////////////////////////////////////
-  
+
   // Código para o botão de multiplicar (se inspirar no de somar, só mudar para multiplicar)
 
   ///////////////////////////////////////////////////////////////

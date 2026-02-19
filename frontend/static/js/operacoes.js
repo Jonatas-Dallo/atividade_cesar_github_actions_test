@@ -20,14 +20,19 @@ async function chamarOperacao(endpoint) {
 }
 
 window.addEventListener("operacao_solicitada", (evento) => {
-  // Soma +++++
+  // Soma
   if (evento.detail.operacao === "soma") {
     chamarOperacao("/soma");
   }
 
-  // Subtrai -----
+  // Subtrai
   if (evento.detail.operacao === "subtrai") {
     chamarOperacao("/subtrai")
+  }
+
+  // Multiplicar
+  if (evento.detail.operacao === "multiplica") {
+    chamarOperacao("/multiplica")
   }
 
   // if para multiplicar (se inspirar no de soma, só mudar para multiplicar)
