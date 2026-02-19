@@ -69,7 +69,7 @@ function inicializarPagina() {
   const elementoBotaoDividir = document.getElementById("botao_dividir");
   elementoBotaoDividir.addEventListener("click", function () {
     salvarValoresNoLocalStorage();
-    dispararOperacaoSolicitada("Dividi");
+    dispararOperacaoSolicitada("dividi");
   });
 
   // Resto da Divisão

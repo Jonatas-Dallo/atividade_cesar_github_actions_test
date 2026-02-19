@@ -5,4 +5,4 @@ def subtrair(numero1, numero2):
     print("Operação realizada com sucesso.")
     print("==========================================")
 
-    return numero1 + numero2
+    return numero1 - numero2
