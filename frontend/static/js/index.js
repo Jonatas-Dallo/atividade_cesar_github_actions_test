@@ -65,6 +65,13 @@ function inicializarPagina() {
     dispararOperacaoSolicitada("multiplica");
   });
 
+  // Dividir
+  const elementoBotaoDividir = document.getElementById("botao_dividir");
+  elementoBotaoDividir.addEventListener("click", function () {
+    salvarValoresNoLocalStorage();
+    dispararOperacaoSolicitada("dividi");
+  });
+
   ///////////////////////////////////////////////////////////////
 
   // Código para o botão de multiplicar (se inspirar no de somar, só mudar para multiplicar)

@@ -35,5 +35,10 @@ window.addEventListener("operacao_solicitada", (evento) => {
     chamarOperacao("/multiplica")
   }
 
+  // Dividir
+  if (evento.detail.operacao === "dividi") {
+    chamarOperacao("/dividi")
+  }
+
   // if para multiplicar (se inspirar no de soma, só mudar para multiplicar)
 });

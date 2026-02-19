@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 from functions.soma import somar
 from functions.subtrai import subtrair
 from functions.multiplica import multiplicar
+from functions.dividi import dividir
 
 calculador = Flask(__name__)
 
@@ -52,6 +53,16 @@ def rota_multiplica():
     
     numero1, numero2 = obter_numeros(corpo_json)
     resultado = multiplicar(numero1, numero2)
+    
+    return jsonify({'resultado': resultado})
+
+# Rota para Divisão
+@calculador.route('/dividi', methods=['POST'])
+def rota_dividi():    
+    corpo_json = request.get_json(silent=True)
+    
+    numero1, numero2 = obter_numeros(corpo_json)
+    resultado = dividir(numero1, numero2)
     
     return jsonify({'resultado': resultado})
 
