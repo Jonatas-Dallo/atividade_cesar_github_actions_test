@@ -1,6 +1,12 @@
 from flask import Flask, request, jsonify
 
 from functions.soma import somar
+from functions.subtrai import subtrair
+from functions.multiplica import multiplicar
+from functions.dividi import dividir
+from functions.resto_divisao import resto_da_divisao
+from functions.media import media
+
 
 calculador = Flask(__name__)
 
@@ -23,6 +29,7 @@ def obter_numeros(corpo_json: dict | None):
     
     return numero1, numero2
 
+# Rota para Soma
 @calculador.route('/soma', methods=['POST'])
 def rota_soma():
     corpo_json = request.get_json(silent=True)
@@ -32,7 +39,56 @@ def rota_soma():
     
     return jsonify({'resultado': resultado})
 
-# Rota para multiplicação
+# Rota para Subtração
+@calculador.route('/subtrai', methods=['POST'])
+def rota_subtrai():
+    corpo_json = request.get_json(silent=True)
+    
+    numero1, numero2 = obter_numeros(corpo_json)
+    resultado = subtrair(numero1, numero2)
+    
+    return jsonify({'resultado': resultado})
+
+# Rota para Multiplicação
+@calculador.route('/multiplica', methods=['POST'])
+def rota_multiplica():    
+    corpo_json = request.get_json(silent=True)
+    
+    numero1, numero2 = obter_numeros(corpo_json)
+    resultado = multiplicar(numero1, numero2)
+    
+    return jsonify({'resultado': resultado})
+
+# Rota para Divisão
+@calculador.route('/dividi', methods=['POST'])
+def rota_dividi():    
+    corpo_json = request.get_json(silent=True)
+    
+    numero1, numero2 = obter_numeros(corpo_json)
+    resultado = dividir(numero1, numero2)
+    
+    return jsonify({'resultado': resultado})
+
+# Rota para Resto da Divisão
+@calculador.route('/resto_divisao', methods=['POST'])
+def rota_resto_divisao():    
+    corpo_json = request.get_json(silent=True)
+    
+    numero1, numero2 = obter_numeros(corpo_json)
+    resultado = resto_da_divisao(numero1, numero2)
+    
+    return jsonify({'resultado': resultado})
+
+# Rota para Média
+@calculador.route('/media', methods=['POST'])
+def rota_media():    
+    corpo_json = request.get_json(silent=True)
+    
+    numero1, numero2 = obter_numeros(corpo_json)
+    resultado = media(numero1, numero2)
+    
+    return jsonify({'resultado': resultado})
+
 
 #################### Ignorar daqui para baixo #####################
 

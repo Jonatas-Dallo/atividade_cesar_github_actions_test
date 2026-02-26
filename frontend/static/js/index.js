@@ -43,27 +43,57 @@ function limparFormulario() {
 
 function inicializarPagina() {
   // Cada botão de operação: salva valores e avisa qual operação foi pedida
+  
+  // Somar
   const elementoBotaoSomar = document.getElementById("botao_somar");
   elementoBotaoSomar.addEventListener("click", function () {
     salvarValoresNoLocalStorage();
     dispararOperacaoSolicitada("soma");
   });
 
+  // Subtrair
+  const elementoBotaoSubtrair = document.getElementById("botao_subtrair");
+  elementoBotaoSubtrair.addEventListener("click", function () {
+    salvarValoresNoLocalStorage();
+    dispararOperacaoSolicitada("subtrai");
+  });
+
+  // Multiplicar
+  const elementoBotaoMultiplicar = document.getElementById("botao_multiplicar");
+  elementoBotaoMultiplicar.addEventListener("click", function () {
+    salvarValoresNoLocalStorage();
+    dispararOperacaoSolicitada("multiplica");
+  });
+
+  // Dividir
+  const elementoBotaoDividir = document.getElementById("botao_dividir");
+  elementoBotaoDividir.addEventListener("click", function () {
+    salvarValoresNoLocalStorage();
+    dispararOperacaoSolicitada("dividi");
+  });
+
+  // Resto da Divisão
+  const elementoBotaoRestoDivisao = document.getElementById("botao_resto_divisao");
+  elementoBotaoRestoDivisao.addEventListener("click", function () {
+    salvarValoresNoLocalStorage();
+    dispararOperacaoSolicitada("resto_divisao");
+  });
+
+  // Média
+const elementoBotaoMedia = document.getElementById("botao_media");
+elementoBotaoMedia.addEventListener("click", function () {
+  salvarValoresNoLocalStorage();
+  dispararOperacaoSolicitada("media");
+});
+
+
   ///////////////////////////////////////////////////////////////
-  
+
   // Código para o botão de multiplicar (se inspirar no de somar, só mudar para multiplicar)
 
   ///////////////////////////////////////////////////////////////
   const elementoBotaoLimpar = document.getElementById("botao_limpar");
   elementoBotaoLimpar.addEventListener("click", limparFormulario);
-
-  // Enter não recarrega; só salva e dispara soma (por enquanto)
-  const elementoFormulario = document.getElementById("formulario_calculadora");
-  elementoFormulario.addEventListener("submit", function (evento) {
-    evento.preventDefault();
-    salvarValoresNoLocalStorage();
-    dispararOperacaoSolicitada("soma");
-  });
 }
 
 document.addEventListener("DOMContentLoaded", inicializarPagina);

@@ -20,9 +20,37 @@ async function chamarOperacao(endpoint) {
 }
 
 window.addEventListener("operacao_solicitada", (evento) => {
+  // Soma
   if (evento.detail.operacao === "soma") {
     chamarOperacao("/soma");
   }
 
+  // Subtrai
+  if (evento.detail.operacao === "subtrai") {
+    chamarOperacao("/subtrai")
+  }
+
+  // Multiplicar
+  if (evento.detail.operacao === "multiplica") {
+    chamarOperacao("/multiplica")
+  }
+
+  // Dividir
+  if (evento.detail.operacao === "dividi") {
+    chamarOperacao("/dividi")
+  }
+
+  // Resto da Divisão
+  if (evento.detail.operacao === "resto_divisao") {
+    chamarOperacao("/resto_divisao")
+  }
+
+    // Média
+  if (evento.detail.operacao === "media") {
+    chamarOperacao("/media")
+
+  }
   // if para multiplicar (se inspirar no de soma, só mudar para multiplicar)
+
+
 });
